@@ -1,0 +1,22 @@
+${name}
+
+---
+#foreach( $i in $list)
+|${i}|
+#end
+---
+
+#if($bl)
+ttt
+#else
+fff
+#end
+
+#if($condition)
+	not null
+#else
+	null
+#end
+
+#set($name= ${name} + ".............")
+${name}

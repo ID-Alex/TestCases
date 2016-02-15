@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://code.alibabatech.com/schema/dubbo http://res.tongbanjie.com/resources/schema/xsd/dubbo.xsd">
+
+
+	<bean id="testServiceImpl" class="io.sunyi.cases.dubbo.server.TestServiceImpl" ></bean>
+
+
+	<bean
+			class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<array>
+				<value>classpath:dubbo.properties</value>
+			</array>
+		</property>
+	</bean>
+
+
+	<dubbo:application name="sunyitest-server"/>
+	<dubbo:registry server="zkRegistry" protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}" file="${user.home}/.dubbo/test2.cache"/>
+	<!--
+	<dubbo:monitor address="${dubbo.monitor.address}" />
+	 -->
+	<dubbo:protocol port="10012" />
+	<dubbo:provider timeout="${dubbo.provider.timeout}" retries="0" />
+
+	<!-- publish service -->
+	<dubbo:service interface="io.sunyi.cases.dubbo.server.TestService" ref="testServiceImpl" version="2.0" />
+
+
+</beans>

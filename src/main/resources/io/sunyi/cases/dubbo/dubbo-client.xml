@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+
+	<dubbo:application name="dubbo-test-client" />
+
+	<!-- 使用 zookeeper -->
+	<dubbo:registry protocol="zookeeper" address="192.168.1.107:2181" client="zkclient" />
+
+	<!-- 用dubbo协议在10001端口暴露服务 -->
+	<dubbo:protocol name="dubbo" port="10002" />
+
+	<!-- 声明需要暴露的服务接口 -->
+	<dubbo:reference id="testService" interface="org.alex.cases.dubbo.server.TestService"/>
+
+</beans>

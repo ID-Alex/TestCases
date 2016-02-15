@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+	<defaultCache maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="3600" timeToLiveSeconds="3600"
+		overflowToDisk="false">
+	</defaultCache>
+	
+	<!-- hbm 4 -->
+	<!-- 
+	<cache name="org.hibernate.cache.internal.StandardQueryCache" maxElementsInMemory="5" eternal="false" timeToLiveSeconds="120">
+	</cache>
+	<cache name="org.hibernate.cache.spi.UpdateTimestampsCache" maxElementsInMemory="5000" eternal="true">
+	</cache>
+	 -->
+	
+	<!-- hbm 3 -->
+	<cache name="org.hibernate.cache.StandardQueryCache" maxElementsInMemory="5" eternal="false" timeToLiveSeconds="120">
+	</cache>
+	<cache name="org.hibernate.cache.UpdateTimestampsCache" maxElementsInMemory="5000" eternal="true">
+	</cache>
+	
+	<cache name="org.alex.cases.orm.entity.Group" maxElementsInMemory="1" ></cache>
+</ehcache>
