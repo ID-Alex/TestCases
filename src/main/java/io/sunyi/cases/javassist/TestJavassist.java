@@ -12,11 +12,12 @@ public class TestJavassist
 			IOException, NoSuchMethodException, SecurityException
 	{
 		ClassPool pool = ClassPool.getDefault();
-		CtClass cc = pool.get("org.alex.cases.javassist.TestClass");
+		CtClass cc = pool.get("io.sunyi.cases.javassist.TestClass");
 		CtMethod setNameMethod = CtMethod.make("public void setName(String name){this.name = $1;}", cc);
 		cc.addMethod(setNameMethod);
 
 		cc.writeFile();
+
 
 		@SuppressWarnings("unchecked")
 		Class<TestClass> c = cc.toClass();
