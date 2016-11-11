@@ -7,7 +7,7 @@ public class SayServiceImpl implements SayService.Iface {
 
 	@Override
 	public String say(String para) throws TException {
-		return "Service say: " + para;
+		return "SayService say: " + para;
 	}
 
 	@Override

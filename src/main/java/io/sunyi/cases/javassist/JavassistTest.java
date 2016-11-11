@@ -7,6 +7,15 @@ import com.alibaba.dubbo.common.bytecode.Wrapper;
  *         Created on 16/1/27
  */
 public class JavassistTest {
+
+
 	public static void main(String args[]) {
+
+
 	}
+
+
+
+
+
 }
